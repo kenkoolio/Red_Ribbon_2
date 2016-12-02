@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#index'
-  get '/users/new' => 'users#new'
+  post '/users' => 'users#create'
+  get '/users/:id/show' => 'users#show'
+  delete '/users/:id' => 'users#destroy'
 end
