@@ -1,0 +1,146 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    	<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+				<a class="navbar-brand" href="">REDRIBBON.US</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#servicesSection">All Services</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Get Involved</a></li>
+                    <li><a href="">Contact Us</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                            <div class="col-lg-12">
+                                <div class="text-center"><h3><b>Register</b></h3></div>
+								<form id="ajax-register-form" action="/users" method="post" role="form" autocomplete="off">
+									<div class="form-group">
+									<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+										<input type="text" name="users[alias]" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
+									<div class="form-group">
+										<input type="email" name="users[email]" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+									</div>
+									<div class="form-group">
+										<input type="password" name="users[password]" id="password" tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<input type="password" name="users[password_confirmation]" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-xs-6 col-xs-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-success" value="Register Now">
+											</div>
+										</div>
+											<% if flash[:errors] %>
+												<% flash[:errors].each do |e| %>
+													<p><%= e %></p>
+												<% end %>
+											<% end %>
+									</div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
+								</form>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+                            <div class="col-lg-12">
+                                <div class="text-center"><h3><b>Log In</b></h3></div>
+                                <form id="ajax-login-form" action="/login" method="post" role="form" autocomplete="off">
+                                    <div class="form-group">
+																		<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+																		
+                                        <label for="email">Email</label>
+                                        <input type="email" name="sessions[email]" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autocomplete="off">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="sessions[password]" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                <label for="remember"> Remember Me</label>
+                                            </div>
+                                            <div class="col-xs-5 pull-right">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                                            </div>
+                                        </div>
+																				<% if flash[:errors] %>
+																					<% flash[:errors].each do |e| %>
+																						<p><%= e %></p>
+																					<% end %>
+																				<% end %>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                                </form>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+			</div>
+		</div>
+	</nav>
+<div id='hands'class="parallax"></div>
+<!-- <div class="lorem"> -->
+<div class="shadow" id='servicesSection'>
+    <div id="services">
+    <h4>All Services</h4>
+    <ul>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Google</a></li>
+        <li><a href="">Amazon</a></li>
+        <li><a href="">Slack</a></li>
+        <li><a href="">Aids</a></li>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Google</a></li>
+        <li><a href="">Amazon</a></li>
+        <li><a href="">Slack</a></li>
+        <li><a href="">Aids</a></li>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Google</a></li>
+        <li><a href="">Amazon</a></li>
+        <li><a href="">Slack</a></li>
+        <li><a href="">Aids</a></li>
+        <li><a href="">Facebook</a></li>
+        <li><a href="">Google</a></li>
+        <li><a href="">Amazon</a></li>
+        <li><a href="">Slack</a></li>
+        <li><a href="">Aids</a></li>
+    </ul>
+    </div>
+    <div id="info">
+       <div id="description">
+       </div><div id="map">
+       </div>
+    </div>
+</div>
+<!-- </div> -->
+<div id="friends" class="parallax"></div>
+<div class="shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ad vero eius tenetur inventore quidem facilis deserunt labore odio nesciunt, id iste, commodi a repudiandae suscipit accusamus debitis expedita. Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus reprehenderit dolores expedita labore unde sapiente ducimus eveniet, nam soluta id. Natus laudantium, aspernatur magnam ea quas assumenda exercitationem itaque! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quidem. Accusantium facilis ipsa molestias, voluptates, in, odit dolorum vero reiciendis dolor dolore soluta ab animi mollitia nemo libero laboriosam harum!</div>
+<div id="hugs" class="parallax"></div>

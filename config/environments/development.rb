@@ -35,7 +35,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  config.secret_key_base = "7b57b47f53e4ee18ae5c44fe9af69405ab484394e6a781c6a10d4b8807b2e6bf79aab7c7b31f84d3d404f448de57d94497eca30cb95f38db75a10328dd69c34b"
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
