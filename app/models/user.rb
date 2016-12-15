@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: { case_sensitive: false, message: "That e-mail is already in use!" }, format: { with: EMAIL_REGEX }
   validates :alias, presence: true, uniqueness: { case_sensitive: false, message: "That username is already in use!" }, length: { minimum: 3 }
-  validates :address, presence: true
+  validates :address, presence: false
 
   before_create do
     self.id == 1 ? self.user_level = 9 : self.user_level = 0
