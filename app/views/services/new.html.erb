@@ -457,7 +457,13 @@
 
       <div class='form-group'>
         <label for='street_name'>Street
-          <input type='text' id='street_name' name='address[name]'>
+          <input type='text' id='street_name' name='address[street]'>
+        </label>
+      </div>
+
+      <div class='form-group'>
+        <label for='apt_number'>Apt
+          <input type='text' id='apt_number' name='address[apt]'>
         </label>
       </div>
 
@@ -478,7 +484,7 @@
 
       <div class='form-group'>
         <label for='zip'>Zip Code
-          <input type='number' id='zip' name='address[zip]'>
+          <input type='number' id='zip' name='address[zip]' maxlength='5'>
         </label>
       </div>
     </div><!-- end address div -->

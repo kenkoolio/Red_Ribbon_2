@@ -28,6 +28,6 @@ class ServicesController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:number, :name, :city, :state, :zip)
+    params.require(:address).permit(:number, :street, :apt, :city, :state, :zip)
   end
 end
