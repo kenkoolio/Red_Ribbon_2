@@ -6,6 +6,8 @@ class ServicesController < ApplicationController
   end
 
   def create
+    puts params
+    redirect_to 'services/new'
   end
 
   def show
@@ -20,4 +22,12 @@ class ServicesController < ApplicationController
   def destroy
   end
 
+  private
+  def service_params
+    params.require(:services).permit(:name, :description, :website, :hours)
+  end
+
+  def address_params
+    params.require(:address).permit(:number, :name, :city, :state, :zip)
+  end
 end
