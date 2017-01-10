@@ -6,8 +6,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    puts params
-    redirect_to 'services/new'
+    redirect_to action: "new"
   end
 
   def show
@@ -29,5 +28,9 @@ class ServicesController < ApplicationController
 
   def address_params
     params.require(:address).permit(:number, :street, :apt, :city, :state, :zip)
+  end
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :phone)
   end
 end
