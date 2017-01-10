@@ -3,29 +3,30 @@
   <form action='/services' method='POST'>
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 
-    <div class='form-group'>
-      <label for='name'>Name
-        <input type='text' class='form-control' id='name' name='services[name]'>
-      </label>
-    </div>
+    <div class='basicInfo'>
 
-    <div class='form-group'>
-      <label for='description'>Description
-        <input type='text' class='form-control' id='description' name='services[description]'>
-      </label>
-    </div>
+      <div class='form-group'>
+        <label for='name'>Name</label>
+          <input type='text' class='form-control' id='name' name='services[name]'>
+      </div>
 
-    <div class='form-group'>
-      <label for='website'>Website
-        <input type='text' class='form-control' id='website' name='services[website]'>
-      </label>
-    </div>
+      <div class='form-group'>
+        <label for='website'>Website</label>
+          <input type='text' class='form-control' id='website' name='services[website]'>
+      </div>
 
-    <div class='form-group'>
-      <label>Hours of Operations</label>
+      <div class='form-group'>
+        <label for='serviceDescription'>Description</label>
+          <input type='text' class='form-control' id='serviceDescription' name='services[description]'>
+      </div>
+
+    </div><!-- basic info -->
+
+    <div class='hoursOfOperations'>
+      <h3>Hours of Operations</h3>
         <div class='form-group'>
           <div class='form-group'>
-            Sunday
+            <h4>Sunday</h4>
             <label for='sunday-open'>Open
               <select class='form-control' id='sunday-open' name='services[hours][sunday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -85,7 +86,7 @@
           </div>
 
           <div class='form-group'>
-            Monday
+            <h4>Monday</h4>
             <label for='monday-open'>Open
               <select class='form-control' id='monday-open' name='services[hours][monday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -145,7 +146,7 @@
           </div>
 
           <div class='form-group'>
-            Tuesday
+            <h4>Tuesday</h4>
             <label for='tuesday-open'>Open
               <select class='form-control' id='tuesday-open' name='services[hours][tuesday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -205,7 +206,7 @@
           </div>
 
           <div class='form-group'>
-            Wednesday
+            <h4>Wednesday</h4>
             <label for='wednesday-open'>Open
               <select class='form-control' id='wednesday-open' name='services[hours][wednesday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -265,7 +266,7 @@
           </div>
 
           <div class='form-group'>
-            Thursday
+            <h4>Thursday</h4>
             <label for='thursday-open'>Open
               <select class='form-control' id='thursday-open' name='services[hours][thursday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -325,7 +326,7 @@
           </div>
 
           <div class='form-group'>
-            Friday
+            <h4>Friday</h4>
             <label for='friday-open'>Open
               <select class='form-control' id='friday-open' name='services[hours][friday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -385,7 +386,7 @@
           </div>
 
           <div class='form-group'>
-            Saturday
+            <h4>Saturday</h4>
             <label for='saturday-open'>Open
               <select class='form-control' id='saturday-open' name='services[hours][saturday][open]'>
                 <option value='12 AM'>12 AM</option>
@@ -449,33 +450,34 @@
 
     <!-- address -->
     <div class='address'>
+      <h3>Address</h3>
       <div class='form-group'>
         <label for='street_number'>Street Number
-          <input type='number' id='street_number' name='address[number]'>
+          <input type='number' id='street_number' name='address[number]' class='form-control'>
         </label>
       </div>
 
       <div class='form-group'>
         <label for='street_name'>Street
-          <input type='text' id='street_name' name='address[street]'>
+          <input type='text' id='street_name' name='address[street]' class='form-control'>
         </label>
       </div>
 
       <div class='form-group'>
         <label for='apt_number'>Apt
-          <input type='text' id='apt_number' name='address[apt]'>
+          <input type='text' id='apt_number' name='address[apt]' class='form-control'>
         </label>
       </div>
 
       <div class='form-group'>
         <label for='city'>City
-          <input type='text' id='city' name='address[city]'>
+          <input type='text' id='city' name='address[city]' class='form-control'>
         </label>
       </div>
 
       <div class='form-group'>
         <label for='state'>State
-          <select id='state' name='address[state]'>
+          <select id='state' name='address[state]' class='form-control'>
             <option value='1'>Texas</option>
             <option value='2'>Washington</option>
           </select>
@@ -484,19 +486,39 @@
 
       <div class='form-group'>
         <label for='zip'>Zip Code
-          <input type='number' id='zip' name='address[zip]' maxlength='5'>
+          <input type='number' id='zip' name='address[zip]' maxlength="5" class='form-control'>
         </label>
       </div>
     </div><!-- end address div -->
     <!-- end address -->
 
+    <!-- contacts -->
+    <div class='contacts'>
+      <h3>Contacts</h3>
+
+      <div class='form-group'>
+        <label for='contactName'>Contact Name
+          <input type='text' class='form-control' id='contactName' name='contact[name]'>
+        </label>
+      </div>
+
+      <div class='form-group'>
+        <label for='contactEmail'>Contact Email
+          <input type='text' class='form-control' id='contactEmail' name='contact[email]'>
+        </label>
+      </div>
+
+      <div class='form-group'>
+        <label for='contactPhone'>Contact Phone
+          <input type='number' class='form-control' id='contactPhone' name='contact[phone]' maxlength="10">
+        </label>
+      </div>
+    </div>
+    <!-- end contacts -->
+
     <!-- type -->
 
     <!-- end type -->
-
-    <!-- contacts -->
-
-    <!-- end contacts -->
 
     <!-- affiliations -->
 
