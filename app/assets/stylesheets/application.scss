@@ -1,12 +1,14 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import "**/*";
+
 
 body, html{
 	height: 100%;
 }
 /*scroll*/
-.parallax { 
-	height: 100%; 
+.parallax {
+	height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
