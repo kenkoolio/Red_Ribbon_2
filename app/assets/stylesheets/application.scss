@@ -4,6 +4,46 @@
 body, html{
 	height: 100%;
 }
+.navbar-inverse {
+  background-color: #22212F;
+}
+.nav a {
+  font-size: 1.25em;
+
+}
+.nav {
+  margin-top: 10px;
+}
+.navbar-brand {
+  margin-top: 7.5px;
+  padding-left: 30px;
+
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover , 
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav > li > a:active , 
+.navbar-inverse .navbar-brand:active{
+  color: #C42023;
+}
+
+.nav > li > a {
+  display: inline-block;
+}
+.container-fluid {
+  box-shadow: 0 4px 2px -2px whitesmoke;
+}
+#navbar li:before {
+		content: "|";
+		margin: 10px;		
+	}
 /*scroll*/
 .parallax { 
 	height: 100%; 
@@ -13,63 +53,174 @@ body, html{
     background-size: cover;
 }
 #hands{
-	background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/48/Black_and_white_Roses.jpg");
+	background-image: image-url("1.jpg");
+
+
 
 }
 #friends{
-	background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/48/Black_and_white_Roses.jpg");
+	background-image: image-url("1.jpg");
+}
+
+#aboutus {
+  // height: 5vh;
+  // margin-top: -20px ;
+  // background-color: #22212F;
+  // text-align: center;
+  // box-shadow: 0 0 25px 15px black;
+  // color: white;
+  // z-index: 1
+  // width: 80vw;
+  // left: 0;
+}
+
+#h {
+  width: 100vw;
+  background-color: white;
+  height: 100%;
+}
+
+#hugs1{
+	background-image: url("http://i.huffpost.com/gen/3730042/images/o-HANDS-AIDS-RIBBON-facebook.jpg");
+  height: 10vh;
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
 }
 
 #hugs{
-	background-image: url("https://c2.staticflickr.com/8/7557/15761889077_8a68c0083a_b.jpg");
+	background-image: url("http://i.huffpost.com/gen/3730042/images/o-HANDS-AIDS-RIBBON-facebook.jpg");
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+}
+
+#splashinfo {
+  width: 40%;
+  // padding: 35vh 0 0 10vw;
+  color: whitesmoke;
+  font-size: 1.75em;
+  position: absolute;
+  left: 5vw;
+  top: 40vh;
+  text-shadow: 5px 5px 10px #000000;
+}
+#splashinfo p {
+  margin-top: 25px;
+  width: 93%;
+}
+
+#description h3 {
+  // margin: 0;
+}
+
+#splashinfo h1, {
+  font-size: 1.75em;
+}
+
+#imap {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
 }
 
 .shadow {
   box-shadow: 0 0 25px 15px black;
   background: white;
-  padding: 30px 70px;
+  // padding: 30px 0;
   opacity: .8;
   position: absolute;
-  width:100%;
-  height: 310px;
+  width:80vw;
+  height: 70vh;
+  left: 10vw;
+  overflow: hidden;
+  z-index: 1;
 }
 
-#shadow li {
-  list-style: none;
+#services ul {
+  padding-left: 0;
+}
+
+#services li {
+  list-style-type: none;
+  list-style-position: inside;
 }
 #services {
   display: inline-block;
-  height: 250px;
+  width: 18%;
+  height: 90%;
   overflow: scroll;
+  margin: 25px;
+
+}
+
+#services  h4 {
+  margin-top: 30px;
 }
 
 #info {
   display: inline-block;
-  border: 1px solid black;
-  width: 80%;
-  height:250px;
+  width: 74%;
+  height:100%;
   vertical-align: top;
-  margin-left: 30px;
+  margin-top: 2%;
 }
+
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+
+/* Let's get this party started */
+::-webkit-scrollbar:horizontal {
+    height: 6px;
+}
+ 
 
 #map {
   display: inline-block;
-  border: 1px solid black;
-  height: 100%;
+  height: 55%;
   width: 40%;
 }
 
 #description {
   display: inline-block;
-  border: 1px solid black;
+  vertical-align: top;
   height: 100%;
   width: 60%;
+  padding-right: 25px;
 }
 
+#description h1 {
+  margin-top: 0;
+}
 
 /* General sizing */
 ul.dropdown-lr {
   width: 300px;
+}
+
+#empty {
+  border-top: 2px solid black;
+  box-shadow: 10px 10px 5px #888;
 }
 
 /* mobile fix */
