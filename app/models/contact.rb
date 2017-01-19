@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
   validates :phone, presence: true, length: { is: 10 }
 
   #todo - before save/create, make phone a string of only numbers (remove special characters)
-  before_create do
-    :phone = :phone.to_s
-  end
+  # before_create do
+  #   :phone = :phone.to_s
+  # end
 end

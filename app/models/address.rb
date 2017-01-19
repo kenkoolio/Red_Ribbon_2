@@ -3,7 +3,9 @@ class Address < ActiveRecord::Base
   belongs_to :zip
 
   has_many :users
-  has_many :services
+  has_many :service_to_addresses
+  has_many :services, through: :service_to_addresses
 
   validates :number, :street, :city, :state, :zip, presence: true
+  
 end
