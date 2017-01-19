@@ -61,7 +61,7 @@
                                 <form id="ajax-login-form" action="/login" method="post" role="form" autocomplete="off">
                                     <div class="form-group">
 																		<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-																		
+
                                         <label for="email">Email</label>
                                         <input type="email" name="sessions[email]" id="email" tabindex="1" class="form-control" placeholder="Email" value="" autocomplete="off">
                                     </div>
@@ -138,6 +138,16 @@
        <div id="description">
        </div><div id="map">
        </div>
+    </div>
+    <div id='showServices'> <!-- temporary -->
+      <% if @all_services %>
+        <% @all_services.each do |s| %>
+          <p><%= s.name %></p>
+          <p><%= s.description %></p>
+          <p><%= s.website %></p>
+          <p><%= s.hours %></p>
+        <% end %>
+      <% end %>
     </div>
 </div>
 <!-- </div> -->

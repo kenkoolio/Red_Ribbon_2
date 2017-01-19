@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :get_all_services, only: [:index]
+
   def index
   end
 
@@ -21,5 +23,9 @@ class SessionsController < ApplicationController
   private
   def user_params
     params.require(:sessions).permit(:email, :password)
+  end
+
+  def get_all_services
+    @all_services = Service.all
   end
 end
