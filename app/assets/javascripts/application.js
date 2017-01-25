@@ -20,6 +20,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+//for index page -> all services -> show service
+function selectService(serviceId) {
+  $.get("/services/"+serviceId+"/ajax_show/", function(response){
+    
+    if (response){
+      $('#serviceName').text(response.name);
+      $('#serviceDescription').text(response.description);
+    }
+
+    return false;
+  }, 'json')
+}
+//end for index page
 
 if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requires jQuery"); + function(a) {
     "use strict";
