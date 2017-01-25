@@ -121,48 +121,22 @@
 
 <div class="shadow" id='servicesSection'>
     <div id="services">
-        <h4>Categories</h4>
-        <ul id='categories'>
-            <li><a href=>Faith-Based Services</a></li>
-            <li><a href=>Gender-Based Services</a></li>
-            <li><a href=>Income-Based Services</a></li>
-            <li><a href=>Dependent-Based Services</a></li>
-            <li><a href=>Required Document-Based Services</a></li>
-            <li><a href=>Faith-Based Services</a></li>
-            <li><a href=>Gender-Based Services</a></li>
-            <li><a href=>Income-Based Services</a></li>
-            <li><a href=>Dependent-Based Services</a></li>
-            <li><a href=>Required Document-Based Services</a></li>
-        </ul>
         <h4>All Services</h4>
         <ul id='servicesList'>
-            <% if @services %>
-                <% @services.each do |e| %>
+            <% if @all_services %>
+                <% @all_services.each do |e| %>
                     <li>
-                        <a href="">
-                            <%= e.name %>
-                        </a>
+                        <%= link_to "#{e.name}", "#", onclick: "selectService(#{e.id}); return false" %>
                     </li>
-                    <% end %>
-                        <% end %>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
-                            <li><a href=>Category 4</a></li>
+                <% end %>
+            <% end %>
         </ul>
     </div>
     <div id="info">
         <div id="description">
-            <h1>Name</h1>
+            <h1 id='serviceName'>Name</h1>
             <h3>Description</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ad vero eius tenetur inventore quidem facilis deserunt labore odio nesciunt, id iste, commodi a repudiandae suscipit accusamus debitis expedita. Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus reprehenderit dolores expedita labore unde sapiente ducimus eveniet.</p>
+            <p id='serviceDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ad vero eius tenetur inventore quidem facilis deserunt labore odio nesciunt, id iste, commodi a repudiandae suscipit accusamus debitis expedita. Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus reprehenderit dolores expedita labore unde sapiente ducimus eveniet.</p>
             <h3>Contact</h3>
             <p>Address:</p>
             <p>Email:</p>

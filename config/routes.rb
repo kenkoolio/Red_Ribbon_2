@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #services routes
   get '/services/new' => 'services#new'
   post '/services' => 'services#create'
+  get '/services/:id/ajax_show' => 'services#ajax_show'
   #end services routes
 
   #logout
