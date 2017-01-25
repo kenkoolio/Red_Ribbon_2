@@ -17,7 +17,10 @@
                 <li><a href="#contactUs">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+              <% if session[:user_id] %>
+                <li><%= button_to 'Logout', '/sessions/destroy', :method => "get" %></li>
+              <% else %>
+                <li class="dropdown"><!-- register -->
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret" id='reg'></span></a>
                     <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                         <div class="col-lg-12">
@@ -48,8 +51,8 @@
                             </form>
                         </div>
                     </ul>
-                </li>
-                <li class="dropdown">
+                </li><!-- register -->
+                <li class="dropdown"><!-- login -->
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                         <div class="col-lg-12">
@@ -92,8 +95,9 @@
                             </form>
                         </div>
                     </ul>
-                </li>
-            </ul>
+                </li><!-- login -->
+              <% end %><!-- if session[:user_id] -->
+             </ul>
         </div>
     </div>
 </nav>
