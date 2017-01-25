@@ -60,7 +60,12 @@ class ServicesController < ApplicationController
 
   def ajax_show
     @selected_service = Service.find_by(id: params[:id])
-    render json: @selected_service
+    @selected_service_contact = @selected_service.contacts
+    ajax_data = {
+      service: @selected_service,
+      contact: @selected_service_contact
+    }
+    render json: ajax_data
   end
 
   def edit

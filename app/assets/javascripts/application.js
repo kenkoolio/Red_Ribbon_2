@@ -23,10 +23,21 @@
 //for index page -> all services -> show service
 function selectService(serviceId) {
   $.get("/services/"+serviceId+"/ajax_show/", function(response){
-    
+    console.log(response);
+
     if (response){
-      $('#serviceName').text(response.name);
-      $('#serviceDescription').text(response.description);
+      $('#serviceName').text(response.service.name);
+      $('#serviceDescription').text(response.service.description);
+
+      if (typeof(response.contact[0]) !== 'undefined'){
+        $('#contactName').text("Name: "+response.contact[0].name);
+        $('#contactEmail').text("Email: "+response.contact[0].email);
+        $('#contactPhone').text("Phone: "+response.contact[0].phone);
+      } else if (typeof(response.contact[0]) == 'undefined') {
+        $('#contactName').text("Name:");
+        $('#contactEmail').text("Email:");
+        $('#contactPhone').text("Phone:");
+      }
     }
 
     return false;

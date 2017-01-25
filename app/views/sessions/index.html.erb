@@ -124,6 +124,8 @@
         <h4>All Services</h4>
         <ul id='servicesList'>
             <% if @all_services %>
+              <% @first_service = @all_services.first %>
+              <% @first_service_contact = @first_service.contacts[0] ? @first_service.contacts[0] : " " %>
                 <% @all_services.each do |e| %>
                     <li>
                         <%= link_to "#{e.name}", "#", onclick: "selectService(#{e.id}); return false" %>
@@ -134,13 +136,13 @@
     </div>
     <div id="info">
         <div id="description">
-            <h1 id='serviceName'>Name</h1>
+            <h1 id='serviceName'><%= @first_service.name %></h1>
             <h3>Description</h3>
-            <p id='serviceDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ad vero eius tenetur inventore quidem facilis deserunt labore odio nesciunt, id iste, commodi a repudiandae suscipit accusamus debitis expedita. Adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus reprehenderit dolores expedita labore unde sapiente ducimus eveniet.</p>
+            <p id='serviceDescription'><%= @first_service.description %></p>
             <h3>Contact</h3>
-            <p>Address:</p>
-            <p>Email:</p>
-            <p>Phone:</p>
+            <p id='contactName'>Name: <%= @first_service_contact != " " ? @first_service_contact.name : " " %></p>
+            <p id='contactEmail'>Email: <%= @first_service_contact != " " ? @first_service_contact.email : " " %></p>
+            <p id='contactPhone'>Phone: <%= @first_service_contact != " " ? @first_service_contact.phone : " " %></p>
 
         </div>
         <div id="map">
