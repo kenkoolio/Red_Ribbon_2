@@ -5,7 +5,10 @@ class Contact < ActiveRecord::Base
 
   validates :name, presence: true
   validates :email, presence: true, format: { with: EMAIL_REGEX }
-  validates :phone, presence: true
+  validates :phone, presence: true, length: { is: 10 }
 
   #todo - before save/create, make phone a string of only numbers (remove special characters)
+  # before_create do
+  #   :phone = :phone.to_s
+  # end
 end

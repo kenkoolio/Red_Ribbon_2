@@ -1,0 +1,527 @@
+<h1 class='serviceTitle'>Add a new Service</h1>
+<div class='container'>
+  <form action='/services' method='POST'>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+    <div class='basicInfo'>
+      <h2>1 Service Info</h2>
+      <div class='serviceBox'>
+        <div class='form-group'>
+          <label for='name'>Name</label>
+            <input type='text' class='form-control' id='name' name='services[name]'>
+        </div>
+        <div class='form-group'>
+          <label for='website'>Website</label>
+            <input type='text' class='form-control' id='website' name='services[website]'>
+        </div>
+        <div class='form-group'>
+          <label for='serviceDescription'>Description</label>
+            <input type='text' class='form-control' id='serviceDescription' name='services[description]'>
+        </div>
+      </div><!-- service Box div -->
+
+    </div><!-- basic info -->
+
+    <!-- address -->
+    <div class='address'>
+      <h2>2 Service Address</h2>
+      <div class='serviceBox'>
+        <div class='form-group'>
+          <label for='street_number'>Street Number</label>
+            <input type='number' id='street_number' name='address[number]' class='form-control'>
+        </div>
+
+        <div class='form-group'>
+          <label for='street_name'>Street</label>
+            <input type='text' id='street_name' name='address[street]' class='form-control'>
+        </div>
+
+        <div class='form-group'>
+          <label for='apt_number'>Apt</label>
+            <input type='text' id='apt_number' name='address[apt]' class='form-control'>
+        </div>
+
+        <div class='form-group'>
+          <label for='city'>City</label>
+            <input type='text' id='city' name='address[city]' class='form-control'>
+        </div>
+
+        <div class='form-group stateZip'>
+          <label for='state'>State
+            <select id='state' name='state[name]' class='form-control'>
+              <option value='Texas'>Texas</option>
+              <option value='Washington'>Washington</option>
+            </select>
+          </label>
+        </div>
+
+        <div class='form-group stateZip'>
+          <label for='zip'>Zip Code
+            <input type='number' id='zip' name='zip[code]' maxlength="5" class='form-control'>
+          </label>
+        </div>
+      </div><!-- service Box div -->
+    </div><!-- end address div -->
+    <!-- end address -->
+
+    <div class='hoursOfOperations'>
+      <h2>3 Hours of Operations</h2>
+      <div class='serviceBox'>
+          <div class='form-group'>
+            <div class='form-group'>
+              <h4>Sunday</h4>
+              <label for='sunday-open'>Open
+                <select class='form-control' id='sunday-open' name='services[hours][sunday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='sunday-close'>Close
+                <select class='form-control' id='sunday-close' name='services[hours][sunday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Monday</h4>
+              <label for='monday-open'>Open
+                <select class='form-control' id='monday-open' name='services[hours][monday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='monday-close'>Close
+                <select class='form-control' id='monday-close' name='services[hours][monday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Tuesday</h4>
+              <label for='tuesday-open'>Open
+                <select class='form-control' id='tuesday-open' name='services[hours][tuesday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='tuesday-close'>Close
+                <select class='form-control' id='tuesday-close' name='services[hours][tuesday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Wednesday</h4>
+              <label for='wednesday-open'>Open
+                <select class='form-control' id='wednesday-open' name='services[hours][wednesday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='wednesday-close'>Close
+                <select class='form-control' id='wednesday-close' name='services[hours][wednesday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Thursday</h4>
+              <label for='thursday-open'>Open
+                <select class='form-control' id='thursday-open' name='services[hours][thursday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='thursday-close'>Close
+                <select class='form-control' id='thursday-close' name='services[hours][thursday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Friday</h4>
+              <label for='friday-open'>Open
+                <select class='form-control' id='friday-open' name='services[hours][friday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='friday-close'>Close
+                <select class='form-control' id='friday-close' name='services[hours][friday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <div class='form-group'>
+              <h4>Saturday</h4>
+              <label for='saturday-open'>Open
+                <select class='form-control' id='saturday-open' name='services[hours][saturday][open]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+              <label for='saturday-close'>Close
+                <select class='form-control' id='saturday-close' name='services[hours][saturday][close]'>
+                  <option value='12 AM'>12 AM</option>
+                  <option value='1 AM'>1 AM</option>
+                  <option value='2 AM'>2 AM</option>
+                  <option value='3 AM'>3 AM</option>
+                  <option value='4 AM'>4 AM</option>
+                  <option value='5 AM'>5 AM</option>
+                  <option value='6 AM'>6 AM</option>
+                  <option value='7 AM'>7 AM</option>
+                  <option value='8 AM'>8 AM</option>
+                  <option value='9 AM'>9 AM</option>
+                  <option value='10 AM'>10 AM</option>
+                  <option value='11 AM'>11 AM</option>
+                  <option value='12 PM'>12 PM</option>
+                  <option value='1 PM'>1 PM</option>
+                  <option value='2 PM'>2 PM</option>
+                  <option value='3 PM'>3 PM</option>
+                  <option value='4 PM'>4 PM</option>
+                  <option value='5 PM'>5 PM</option>
+                  <option value='6 PM'>6 PM</option>
+                  <option value='7 PM'>7 PM</option>
+                  <option value='8 PM'>8 PM</option>
+                  <option value='9 PM'>9 PM</option>
+                  <option value='10 PM'>10 PM</option>
+                  <option value='11 PM'>11 PM</option>
+                </select>
+              </label>
+            </div><!-- end saturday -->
+          </div><!-- form group -->
+        </div><!-- service Box div -->
+    </div><!-- hours of operations -->
+
+    <!-- contacts -->
+    <div class='contacts'>
+      <h2>Service Contacts</h2>
+      <div class='serviceBox'>
+        <div class='form-group'>
+          <label for='contactName'>Contact Name</label>
+            <input type='text' class='form-control' id='contactName' name='contact[name]'>
+        </div>
+        <div class='form-group'>
+          <label for='contactEmail'>Contact Email</label>
+            <input type='text' class='form-control' id='contactEmail' name='contact[email]'>
+        </div>
+        <div class='form-group'>
+          <label for='contactPhone'>Contact Phone</label>
+            <input type='number' class='form-control' id='contactPhone' name='contact[phone]' maxlength="10">
+        </div>
+      </div><!-- service Box div -->
+    </div><!-- contacts -->
+    <!-- end contacts -->
+
+    <!-- type -->
+
+    <!-- end type -->
+
+    <!-- affiliations -->
+
+    <!-- end affiliations -->
+
+    <!-- required documents -->
+
+    <!-- end required documents -->
+    <input class='submitButton' type='submit' value='Submit'>
+  </form>
+</div><!-- container-->

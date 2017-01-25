@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213210834) do
+ActiveRecord::Schema.define(version: 20170114000243) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "number"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20161213210834) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "service_to_addresses", force: :cascade do |t|
+    t.integer  "service_id"
+    t.integer  "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "service_to_addresses", ["address_id"], name: "index_service_to_addresses_on_address_id"
+  add_index "service_to_addresses", ["service_id"], name: "index_service_to_addresses_on_service_id"
 
   create_table "service_to_affiliations", force: :cascade do |t|
     t.integer  "service_id"
