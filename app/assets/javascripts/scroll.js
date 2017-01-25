@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function() {
         x =160;
       }
       else {
-        x = 90;
+        x = 60;
       }
       if (target.length) {
         $('html,body').animate({
