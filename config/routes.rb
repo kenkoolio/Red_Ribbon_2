@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get '/services/new' => 'services#new'
   post '/services' => 'services#create'
   #end services routes
+
+  #logout
+  get '/sessions/destroy' => 'sessions#destroy'
+
   resources :users
 end
