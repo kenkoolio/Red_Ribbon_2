@@ -124,8 +124,12 @@
         <h4>All Services</h4>
         <ul id='servicesList'>
             <% if @all_services %>
-              <% @first_service = @all_services.first %>
-              <% @first_service_contact = @first_service.contacts[0] ? @first_service.contacts[0] : " " %>
+              <% @first_service           = @all_services.first %>
+              <% @first_service_address   = @first_service.addresses ? @first_service.addresses[0] : nil %>
+              <% @first_service_state     = @first_service_address != nil ? @first_service_address.state : nil %>
+              <% @first_service_zip       = @first_service_address != nil ? @first_service_address.zip : nil %>
+
+              <% @first_service_contact   = @first_service.contacts[0] ? @first_service.contacts[0] : nil %>
                 <% @all_services.each do |e| %>
                     <li>
                         <%= link_to "#{e.name}", "#", onclick: "selectService(#{e.id}); return false" %>
@@ -139,19 +143,18 @@
             <h3>Description</h3>
             <p id='serviceDescription'><%= @first_service.description %></p>
             <h3>Contact</h3>
-            <p id='contactName'>Name: <%= @first_service_contact != " " ? @first_service_contact.name : " " %></p>
-            <p id='contactEmail'>Email: <%= @first_service_contact != " " ? @first_service_contact.email : " " %></p>
-            <p id='contactPhone'>Phone: <%= @first_service_contact != " " ? @first_service_contact.phone : " " %></p>
+            <p id='contactName'>Name: <%= @first_service_contact != nil ? @first_service_contact.name : nil %></p>
+            <p id='contactEmail'>Email: <%= @first_service_contact != nil ? @first_service_contact.email : nil %></p>
+            <p id='contactPhone'>Phone: <%= @first_service_contact != nil ? @first_service_contact.phone : nil %></p>
 
         </div>
         <div id="map">
-            <iframe id="imap" src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
-        &zoom=13
-        &attribution_source=Google+Maps+Embed+API
-        &attribution_web_url=https://developers.google.com/maps/documentation/embed/
-        &key=AIzaSyCm5KqD2-sVqIMbQMnWkf6eKc3upQCVqpM" allowfullscreen>
+          <% if @first_service_address != nil %>
+            <iframe id="imap" src="http://www.google.com/maps/embed/v1/place?key=AIzaSyCm5KqD2-sVqIMbQMnWkf6eKc3upQCVqpM&q=<%= @first_service_address.number %>+<%= @first_service_address.street %>+<%= @first_service_address.city %>+<%= @first_service_state %>+<%= @first_service_zip %>&zoom=13&attribution_source=Google+Maps+Embed+API" allowfullscreen>
+
             </iframe>
-    </div>
+          <% end %>
+        </div>
 </div>
 
 <!-- </div> -->

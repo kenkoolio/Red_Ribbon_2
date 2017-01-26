@@ -20,12 +20,71 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+//for Google Maps Api
+function getGoogleMap(info, callback){
+
+ var edited_street = info['str'].replace(" ", "+");
+ var data = {
+   num  : info['num'],
+   str  : edited_street,
+   apt  : info['apt'],
+   city : info['city'],
+   state: info['state'],
+   zip  : info['zip']
+ }
+
+ var api_key = "AIzaSyCm5KqD2-sVqIMbQMnWkf6eKc3upQCVqpM";
+ var iframe_url = "https://www.google.com/maps/embed/v1/place?key="+api_key+"&q=";
+ var zoom = "&zoom=13";
+
+ var  iframe_html = "<iframe id='imap' src='";
+      iframe_html += iframe_url;
+      iframe_html += data['num']+"+";
+      iframe_html += data['str']+"+";
+      iframe_html += data['city']+"+";
+      iframe_html += data['state']+"+";
+      iframe_html += data['zip']+"+";
+      iframe_html += zoom;
+      iframe_html += "' allowfullscreen>";
+      iframe_html += "</iframe>";
+
+  if (typeof(callback) == 'function'){
+    callback(iframe_html);
+  }
+}
+// end for google maps api
+
 //for index page -> all services -> show service
 function selectService(serviceId) {
   $.get("/services/"+serviceId+"/ajax_show/", function(response){
-    console.log(response);
 
     if (response){
+      //to update map
+      console.log(response.address);
+
+      if (response.address != null){
+        var serviceAddressNumber  = response.address.number;
+        var serviceAddressStreet  = response.address.street;
+        var serviceAddressApt     = response.address.apt ? response.address.apt : " ";
+        var serviceAddressCity    = response.address.city;
+        var serviceAddressState   = response.state.name;
+        var serviceAddressZip     = response.zip.code;
+
+        var data = {
+          num   :   serviceAddressNumber,
+          str   :   serviceAddressStreet,
+          apt   :   serviceAddressApt,
+          city  :   serviceAddressCity,
+          state :   serviceAddressState,
+          zip   :   serviceAddressZip
+        }
+
+        getGoogleMap(data, function(iframe_html){
+          $('#map').html(iframe_html);
+        });
+      }
+
+      //to show info
       $('#serviceName').text(response.service.name);
       $('#serviceDescription').text(response.service.description);
 
@@ -44,6 +103,7 @@ function selectService(serviceId) {
   }, 'json')
 }
 //end for index page
+
 
 if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requires jQuery"); + function(a) {
     "use strict";
