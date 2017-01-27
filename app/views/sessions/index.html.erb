@@ -126,11 +126,13 @@
         <ul id='servicesList'>
             <% if @all_services %>
               <% @first_service           = @all_services.first %>
-              <% @first_service_address   = @first_service.addresses ? @first_service.addresses[0] : nil %>
-              <% @first_service_state     = @first_service_address != nil ? @first_service_address.state : nil %>
-              <% @first_service_zip       = @first_service_address != nil ? @first_service_address.zip : nil %>
+              <% if @first_service %>
+                <% @first_service_address   = @first_service.addresses ? @first_service.addresses[0] : nil %>
+                <% @first_service_state     = @first_service_address != nil ? @first_service_address.state : nil %>
+                <% @first_service_zip       = @first_service_address != nil ? @first_service_address.zip : nil %>
 
-              <% @first_service_contact   = @first_service.contacts[0] ? @first_service.contacts[0] : nil %>
+                <% @first_service_contact   = @first_service.contacts[0] ? @first_service.contacts[0] : nil %>
+              <% end %>
                 <% @all_services.each do |e| %>
                     <li>
                         <%= link_to "#{e.name}", "#", onclick: "selectService(#{e.id}); return false" %>
@@ -140,15 +142,15 @@
         </ul>
     </div>
         <div id="description">
-            <h1 id='serviceName'><%= @first_service.name %></h1>
+            <h1 id='serviceName'><%= @first_service ? @first_service.name : nil %></h1>
             <h3>Description</h3>
-            <p id='serviceDescription'><%= @first_service.description %></p>
+            <p id='serviceDescription'><%= @first_service ? @first_service.description : nil %></p>
             <h3>Contact</h3>
             <p id='contactName'>Name: <%= @first_service_contact != nil ? @first_service_contact.name : nil %></p>
-            <p id='website'>Website: <%= %></p>
+            <p id='website'>Website: <%= @first_service ? @first_service.website : nil %></p>
             <p id='contactEmail'>Email: <%= @first_service_contact != nil ? @first_service_contact.email : nil %></p>
             <p id='contactPhone'>Phone: <%= @first_service_contact != nil ? @first_service_contact.phone : nil %></p>
-            <p id='hours'>Hours: <%= %></p>
+            <p id='hours'>Hours: <%= @first_service ? @first_service.hours : nil %></p>
 
         </div>
         <div id="map">
