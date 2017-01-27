@@ -145,8 +145,10 @@
             <p id='serviceDescription'><%= @first_service.description %></p>
             <h3>Contact</h3>
             <p id='contactName'>Name: <%= @first_service_contact != nil ? @first_service_contact.name : nil %></p>
+            <p id='website'>Website: <%= %></p>
             <p id='contactEmail'>Email: <%= @first_service_contact != nil ? @first_service_contact.email : nil %></p>
             <p id='contactPhone'>Phone: <%= @first_service_contact != nil ? @first_service_contact.phone : nil %></p>
+            <p id='hours'>Hours: <%= %></p>
 
         </div>
         <div id="map">
