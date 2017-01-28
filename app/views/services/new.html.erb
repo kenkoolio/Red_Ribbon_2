@@ -1,5 +1,14 @@
 <h1 class='serviceTitle'>Add a new Service</h1>
 <div class='container'>
+  <% if flash[:errors] %>
+      <div id="errors">
+          <% flash[:errors].each do |e| %>
+              <p>
+                  <%= e %>
+              </p>
+          <% end %>
+      </div>
+  <% end %>
   <form action='/services' method='POST'>
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 
