@@ -6,6 +6,6 @@ class Address < ActiveRecord::Base
   has_many :service_to_addresses
   has_many :services, through: :service_to_addresses
 
-  validates :number, :street, :city, :state, :zip, presence: true
-  
+  validates :number, :street, :city, presence: true
+
 end
