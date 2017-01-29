@@ -78,6 +78,7 @@ body, html{
   width: 40%;
   margin: 15px;
   flex: auto;
+  overflow: auto;
 }
 
 #description p {
@@ -616,6 +617,22 @@ ul.dropdown-lr {
   }
   #map {
     width: 30%;
+  }
+
+  #description p {
+    font-size: 1em;
+  }
+
+  #description h1 {
+    font-size: 30px;
+  }
+
+  #description h3 {
+    font-size: 22px;
+  }
+
+  #description h4 {
+    font-size: 22px;
   }
 
 }
