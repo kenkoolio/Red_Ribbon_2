@@ -592,3 +592,28 @@ ul.dropdown-lr {
   width: 100%;
   height: 100%;
 }
+
+@media only screen and (max-width: 1450px) {
+  .center {
+    top: 15%;
+    width: 60%;  
+  }
+  .center h1 {
+    font-size: 3em;
+  }
+
+  .center p {
+    font-size: 1em;
+  }
+
+  .center h3 {
+    font-size: 1.5em;
+  }
+
+  #splashinfo h1 {
+    font-size: 1.35em;
+  }
+  #map {
+    width: 30%;
+  }
+}
