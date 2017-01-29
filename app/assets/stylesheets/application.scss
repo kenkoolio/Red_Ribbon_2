@@ -2,8 +2,6 @@
 @import 'bootstrap';
 @import "**/*";
 
-
-
 .center {
   position: relative;
   top: 25%;
@@ -24,9 +22,11 @@
   font-size: 1.25em;
   font-weight: normal;
 }
+
 .center form {
   width: 100%;
 }
+
 .center input {
   border: none;
   border-bottom: 1px solid gray;
@@ -281,7 +281,6 @@ body, html{
   display: flex;
   padding: 40px;
 }
-
 
 .text {
   width: 50%;
@@ -611,7 +610,6 @@ ul.dropdown-lr {
   .center h3 {
     font-size: 1.35em;
   }
-
   
   #splashinfo {
     font-size: 1.5em;
@@ -638,6 +636,11 @@ ul.dropdown-lr {
 
   #description h4 {
     font-size: 22px;
+  }
+
+  
+  #getInvolved {
+    line-height: 1em;
   }
 
 }
