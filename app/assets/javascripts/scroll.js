@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       var x = 0;
       if (target.selector == '#servicesSection'){
-        x =160;
+        x =190;
       }
       else {
         x = 60;
