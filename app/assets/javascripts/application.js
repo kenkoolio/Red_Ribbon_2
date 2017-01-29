@@ -60,7 +60,12 @@ function selectService(serviceId) {
 
     if (response){
       //to update map
-      console.log(response.address);
+
+      // todo: convert ruby hash into useable JSON for service hours
+        // console.log(typeof(JSON.parse(response.service.hours)));
+        // console.log(typeof($.parseJSON(response.service.hours)));
+        // console.log($.parseJSON(response.service.hours));
+        // response.service.hours = JSON.parse(response.service.hours);
 
       if (response.address != null){
         var serviceAddressNumber  = response.address.number;
@@ -85,8 +90,95 @@ function selectService(serviceId) {
       }
 
       //to show info
+
+      //todo: table html once successfully converted service hours from RUBY hash to JSON
+          // var hoursTableHtml = "<table>";
+          //       hoursTableHtml += "<thead>";
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Day</td>";
+          //           hoursTableHtml += "<td>Open</td>";
+          //           hoursTableHtml += "<td>Close</td";
+          //         hoursTableHtml += "</tr>";
+          //       hoursTableHtml += "</thead>";
+          //
+          //       hoursTableHtml += "<tbody>";
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Sunday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.sunday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.sunday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Monday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.monday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.monday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Tuesday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.tuesday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.tuesday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Wednesday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.wednesday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.wednesday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Thursday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.thursday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.thursday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Friday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.friday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.friday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //         hoursTableHtml += "<tr>";
+          //           hoursTableHtml += "<td>Saturday</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.saturday.open;
+          //           hoursTableHtml += "</td>";
+          //           hoursTableHtml += "<td>";
+          //           hoursTableHtml += response.service.hours.saturday.close;
+          //           hoursTableHtml += "</td>";
+          //         hoursTableHtml += "</tr>";
+          //
+          //       hoursTableHtml += "</tbody";
+          //     hoursTableHtml += "</table>";
+
       $('#serviceName').text(response.service.name);
       $('#serviceDescription').text(response.service.description);
+      $('#serviceWebsite').html("<a href='"+response.service.website+"'>"+response.service.website+"</a>");
+      // $('#serviceHours').html(hoursTableHtml);
 
       if (typeof(response.contact[0]) !== 'undefined'){
         $('#contactName').text("Name: "+response.contact[0].name);

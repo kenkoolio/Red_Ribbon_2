@@ -44,7 +44,6 @@
 .center p {
   font-size: 1.25em;
 }
-
 .center textarea {
   float: right;
   width: 75%;
@@ -78,13 +77,15 @@ body, html{
   height: 100%;
   width: 40%;
   margin: 15px;
-  flex: auto;  
-  overflow: auto;
+  flex: auto;
+}
+
+#description p {
+  font-size: 1.25em;
 }
 
 #description h1 {
   margin-top: 0;
-  font-size: 2em;
 }
 #empty {
   border-top: 2px solid black;
@@ -96,9 +97,9 @@ body, html{
   bottom: 5vh;
   right: 1px;
   background: white;
-  width: 20vw;
+  width: 18vw;
   padding: 10px;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -132,6 +133,14 @@ body, html{
   height: 100%;
   border: 1px solid black;
 }
+
+// #info {
+//   display: inline-block;
+//   width: 76%;
+//   height:100%;
+//   vertical-align: top;
+//   margin-top: 2%;
+// }
 
 #map {
   display: inline-block;
@@ -322,6 +331,17 @@ ul.dropdown-lr {
   width: 300px;
 }
 
+
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
 
 @charset "UTF-8";
 

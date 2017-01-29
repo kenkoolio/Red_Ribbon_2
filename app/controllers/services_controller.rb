@@ -13,45 +13,60 @@ class ServicesController < ApplicationController
   end
 
   def create
+    errors = []
+
     @new_service = Service.new(service_params)
-    if @new_service.save
-      @state = State.new(state_params)
-      if @state.save
-        @zip = Zip.new(zip_params)
-        if @zip.save
-          @address = Address.new(address_params)
+    # @new_service.hours = @new_service.hours.to_json #to conver ruby hash to json .. right now it returns a json string ??
+    unless @new_service.valid?
+      errors << @new_service.errors.full_messages
+    end
+
+    @address = Address.new(address_params)
+    unless @address.valid?
+      errors << @address.errors.full_messages
+    end
+
+    @state = State.new(state_params)
+    unless @state.valid?
+      errors << @state.errors.full_messages
+    end
+
+    @zip = Zip.new(zip_params)
+    unless @zip.valid?
+      errors << @zip.errors.full_messages
+    end
+
+    @contact = Contact.new(contact_params)
+    unless @contact.valid?
+      errors << @contact.errors.full_messages
+    end
+
+    unless errors.count > 0
+      if @new_service.save
+        if @state.save
           @address.state = State.find(@state.id)
-          @address.zip = Zip.find(@zip.id)
-          if @address.save
-            @service_to_address = ServiceToAddress.new(service: Service.find(@new_service.id), address: Address.find(@address.id))
-            if @service_to_address.save
-              @contact = Contact.new(contact_params)
+
+          if @zip.save
+            @address.zip = Zip.find(@zip.id)
+
+            if @address.save
+              @service_to_address = ServiceToAddress.new(service: Service.find(@new_service.id), address: Address.find(@address.id))
+
+              @service_to_address.save
+
               @contact.service = Service.find(@new_service.id)
-              if @contact.save
-                redirect_to '/'
-              else
-                flash[:errors] = @contact.errors.full_messages
-                redirect_to '/'
-              end
-            else
-              flash[:errors] = @service_to_address.errors.full_messages
+              @contact.save
+
               redirect_to '/'
             end
-          else
-            flash[:errors] = @address.errors.full_messages
-            redirect_to '/'
           end
-        else
-          flash[:errors] = @zip.errors.full_messages
-          redirect_to '/'
         end
-      else
-        flash[:errors] = @state.errors.full_messages
-        redirect_to '/'
       end
-    else
-      flash[:errors] = @new_service.errors.full_messages
-      redirect_to '/'
+    end
+
+    if errors.count > 0
+      flash[:errors] = errors
+      render "services/new"
     end
   end
 
