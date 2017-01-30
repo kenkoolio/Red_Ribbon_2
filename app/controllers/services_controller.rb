@@ -36,9 +36,11 @@ class ServicesController < ApplicationController
       errors << @zip.errors.full_messages
     end
 
-    @contact = Contact.new(contact_params)
-    unless @contact.valid?
-      errors << @contact.errors.full_messages
+    if contact_params[:name].present?
+      @contact = Contact.new(contact_params)
+      unless @contact.valid?
+        errors << @contact.errors.full_messages
+      end
     end
 
     unless errors.count > 0
@@ -54,8 +56,10 @@ class ServicesController < ApplicationController
 
               @service_to_address.save
 
-              @contact.service = Service.find(@new_service.id)
-              @contact.save
+              if contact_params[:name].present?
+                @contact.service = Service.find(@new_service.id)
+                @contact.save
+              end
 
               redirect_to '/'
             end
