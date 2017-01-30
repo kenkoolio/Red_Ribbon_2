@@ -181,10 +181,12 @@ function selectService(serviceId) {
       // $('#serviceHours').html(hoursTableHtml);
 
       if (typeof(response.contact[0]) !== 'undefined'){
+        $('#contactDiv').css('display', 'block');
         $('#contactName').text("Name: "+response.contact[0].name);
         $('#contactEmail').text("Email: "+response.contact[0].email);
         $('#contactPhone').text("Phone: "+response.contact[0].phone);
       } else if (typeof(response.contact[0]) == 'undefined') {
+        $('#contactDiv').css('display', 'none');
         $('#contactName').text("Name:");
         $('#contactEmail').text("Email:");
         $('#contactPhone').text("Phone:");

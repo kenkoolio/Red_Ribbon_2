@@ -126,6 +126,8 @@
         <ul id='servicesList'>
             <% if @all_services %>
               <% @first_service             = @all_services.first %>
+              <!-- check if there exists any services, and pre-populate the page with the first service details -->
+              <!-- the following ternary operators check if first_service exists to fill in the field, otherwise it would result in finding attribute of nil-class error -->
               <% if @first_service %>
                 <% @first_service_address   = @first_service.addresses ? @first_service.addresses[0] : nil %>
                 <% @first_service_state     = @first_service_address != nil ? @first_service_address.state : nil %>
@@ -146,12 +148,15 @@
               <p id='serviceWebsite'><a href='<%= @first_service ? @first_service.website : nil %>'><%= @first_service ? @first_service.website : nil %></a></p>
             <h3>Description</h3>
               <p id='serviceDescription'><%= @first_service ? @first_service.description : nil %></p>
+            <!-- todo: convert ruby hash to json -->
             <!-- <h3>Hours</h3>
               <p id='serviceHours'>Hours: <%= @first_service ? @first_service.hours : nil %></p> -->
-            <h3>Contact</h3>
-              <p id='contactName'>Name: <%= @first_service_contact != nil ? @first_service_contact.name : nil %></p>
-              <p id='contactEmail'>Email: <%= @first_service_contact != nil ? @first_service_contact.email : nil %></p>
-              <p id='contactPhone'>Phone: <%= @first_service_contact != nil ? @first_service_contact.phone : nil %></p>
+              <div id='contactDiv' style="display: <%= @first_service_contact != nil ? 'block' : 'none' %>">
+                <h3>Contact</h3>
+                  <p id='contactName'>Name: <%= @first_service_contact != nil ? @first_service_contact.name : nil %></p>
+                  <p id='contactEmail'>Email: <%= @first_service_contact != nil ? @first_service_contact.email : nil %></p>
+                  <p id='contactPhone'>Phone: <%= @first_service_contact != nil ? @first_service_contact.phone : nil %></p>
+              </div><!-- contact Div -->
         </div>
         <div id="map">
           <% if @first_service_address != nil %>
